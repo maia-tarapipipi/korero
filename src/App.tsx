@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-      {isAuthenticated ? (
+      {/* {isAuthenticated ? (
 // header
 // outlet (dashboard and chat app)
 // 
@@ -16,8 +16,7 @@ function App() {
 // login
 // register
       )
-      }
-      
+      } */}
     </div>
   )
 }
