@@ -1,3 +1,4 @@
+import Messages from './components/Messages'
 import ChatWindow from './components/chatWindow'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="sm:mx-10 max-sm:mx-5 my-10">
       <header className="App-header"></header>
       kōrero app
+      <Messages />
       <ChatWindow />
     </div>
   )

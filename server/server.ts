@@ -1,20 +1,32 @@
-import { createServer } from 'http'
 import { join } from 'node:path'
 import * as express from 'express'
-import { Server } from 'socket.io'
-import sockets from 'socket.io'
+import { Server as ServerIo } from 'socket.io'
+// const http = require('http').Server(app);
+import http from 'http'
+//express server
+const expressServer = express()
 
-const server = express()
-const httpServer = createServer(server)
+// combined server and socket connection
 
-server.use(express.static(join(__dirname, 'public')))
+const combinedServer = http.createServer(expressServer)
 
-server.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'public', 'index.html'))
+// socket io server
+const io = new ServerIo(combinedServer, {})
+
+// server side routes
+expressServer.use(express.static(join(__dirname, 'public')))
+
+expressServer.get('/', (_, res) => {
+  res.sendFile(join(__dirname, 'index.html'))
 })
 
-const io = new Server(httpServer, {
+// socket io connection
+io.on('connection', (socket) => {
+  console.log('socket connected')
+  socket.on('disconnect', () => {
+    console.log('user disconnected')
+  })
 })
-httpServer.listen(5173)
 
-
+// export out the combined server
+export default combinedServer
