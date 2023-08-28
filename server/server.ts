@@ -13,6 +13,9 @@ const combinedServer = http.createServer(expressServer);
 // socket io server
 const io = new ServerIo(combinedServer, {});
 
+const __filename = new URL(import.meta.url).pathname;
+const __dirname = join(__filename, "../");
+
 // server side routes
 expressServer.use(express.static(join(__dirname, "public")));
 
