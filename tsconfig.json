@@ -7,7 +7,6 @@
     "jsx": "react-jsx",
     "module": "ES2020",
     "moduleResolution": "NodeNext",
-    "allowImportingTsExtensions": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
