@@ -1,5 +1,5 @@
-import Messages from './components/Messages'
-import ChatWindow from './components/chatWindow'
+import Messages from "./components/Messages";
+import ChatWindow from "./components/ChatWindow";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Messages />
       <ChatWindow />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
