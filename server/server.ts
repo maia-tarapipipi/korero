@@ -1,9 +1,9 @@
 import { join } from 'node:path'
 import * as express from 'express'
 import { Server as ServerIo } from 'socket.io'
-// const http = require('http').Server(app);
 import http from 'http'
-//express server
+
+//express server//
 const expressServer = express()
 
 // combined server and socket connection
@@ -22,7 +22,7 @@ expressServer.get('/', (_, res) => {
 
 // socket io connection
 io.on('connection', (socket) => {
-  console.log('socket connected')
+  console.log('socket connected hello')
   socket.on('disconnect', () => {
     console.log('user disconnected')
   })
@@ -30,3 +30,9 @@ io.on('connection', (socket) => {
 
 // export out the combined server
 export default combinedServer
+
+const port = process.env.PORT || 3000
+
+combinedServer.listen(port, () => {
+  console.log(`listening on ${port}`)
+})
