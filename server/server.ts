@@ -1,38 +1,47 @@
-import { join } from 'node:path'
-import * as express from 'express'
+import express from 'express'
 import { Server as ServerIo } from 'socket.io'
-import http from 'http'
+import { createServer } from 'http'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import cors from 'cors'
 
 //express server//
-const expressServer = express()
+const app = express()
+
+app.use(cors())
 
 // combined server and socket connection
 
-const combinedServer = http.createServer(expressServer)
+const httpServer = createServer(app)
 
 // socket io server
-const io = new ServerIo(combinedServer, {})
+const io = new ServerIo(httpServer, {
+  cors: {
+    origin: 'http://localhost:5173',
+  },
+})
 
-// server side routes
-expressServer.use(express.static(join(__dirname, 'public')))
+// ----------- server side routes -----------
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-expressServer.get('/', (_, res) => {
-  res.sendFile(join(__dirname, 'index.html'))
+app.use(express.static(__dirname + 'public'))
+
+app.get('/', (_, res) => {
+  res.sendFile(__dirname + 'index.html')
 })
 
 // socket io connection
 io.on('connection', (socket) => {
-  console.log('socket connected hello')
+  console.log('user connected')
   socket.on('disconnect', () => {
     console.log('user disconnected')
+  })
+  socket.on('chat message', (msg) => {
+    console.log('message recieved server:', msg)
+    io.emit('chat message', msg)
   })
 })
 
 // export out the combined server
-export default combinedServer
-
-const port = process.env.PORT || 3000
-
-combinedServer.listen(port, () => {
-  console.log(`listening on ${port}`)
-})
+export default httpServer

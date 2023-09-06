@@ -1,5 +1,5 @@
-import Messages from './components/Messages'
-import ChatWindow from './components/chatWindow'
+import React from 'react'
+import ChatArea from './components/ChatArea'
 
 function App() {
   return (
@@ -7,8 +7,7 @@ function App() {
     <div className="sm:mx-10 max-sm:mx-5 my-10">
       <header className="App-header"></header>
       kōrero app
-      <Messages />
-      <ChatWindow />
+      <ChatArea />
     </div>
   )
 }

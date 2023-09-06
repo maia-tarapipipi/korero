@@ -1,30 +1,24 @@
-import { IoSend } from 'react-icons/io5'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import ChatBox from './ChatBox'
+import socket from '../Socket'
 
 export default function ChatWindow() {
-  const [message, setMessage] = useState('')
-
-  // TO DO: fix the event target label
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
+  const [messages, setMessages] = useState([] as string[])
+  function newMessage(str: string) {
+    setMessages([str, ...messages])
   }
 
+  socket.on('connect', () => newMessage(`Welcome ${socket.id}`))
+  socket.on('disconnect', () => newMessage('session over'))
+
+  socket.on('chat message', (msg) => newMessage(msg))
+
   return (
-    <div className="border-[3px] border-[#80AB15] rounded-[30px]">
-      <form onSubmit={handleSubmit} className="flex flex-row ">
-        <textarea
-          placeholder="type your messages here..."
-          className="w-[80%] m-5"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        />
-        <button
-          type="submit"
-          className="w-[20%] border-l-[3px] flex justify-center items-center rounded-r-[30px] border-[#80AB15] bg-[#95B93C]"
-        >
-          <IoSend size={20} color={'white'} />
-        </button>
-      </form>
+    <div>
+      {messages.map((m, i) => (
+        <p key={i}>{m}</p>
+      ))}
+      <ChatBox socket={socket} />
     </div>
   )
 }
