@@ -6,12 +6,12 @@ export default function RegisterButton() {
   return (
     <div>
       <button
-      className='bg-#80AB15 text-white'
+        className="border border-[#95B93C] text-[#95B93C] p-2 w-48 rounded-lg"
         onClick={() => {
           loginWithRedirect({
             authorizationParams: {
               screen_hint: 'signup',
-              redirect_uri: `${window.location.origin}/profile`,
+              redirect_uri: `${window.location.origin}/`,
             },
           })
         }}

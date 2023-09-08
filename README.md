@@ -60,7 +60,9 @@ postgres
 - container -> giving the computer instructions on how to build and run (like buying the ingredients and then giving it to the chef)
 
 
-Database Research:
+Consistent naming conventions: 
+- folder names: snakeCase
+- component names: first letter capitalized
 
 
 Documentation: 

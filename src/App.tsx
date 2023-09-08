@@ -14,15 +14,18 @@ function App() {
     <div className="h-screen w-full">
       {isAuthenticated ? (
         <div>
+          main app
           <Header />
           <ChatWindow />
           <Nav />
         </div>
       ) : (
-        <div>
+        <div className="h-full w-full">
           <Header />
-          <LoginButton />
-          <RegisterButton />
+          <div className="flex flex-col items-center justify-center h-full space-y-5 ">
+            <LoginButton />
+            <RegisterButton />
+          </div>
         </div>
       )}
     </div>
