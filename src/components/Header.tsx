@@ -6,7 +6,7 @@ export default function Header() {
 
   return (
     <div
-      className="bg-[#95B93C] w-full rounded-b-lg p-2 mb-5 text-white antialiased font-semibold text-left"
+      className="bg-[#95B93C] w-full rounded-b-lg p-2 text-white antialiased font-semibold text-left"
       onClick={() => navigate('/')}
       aria-label="home"
     >

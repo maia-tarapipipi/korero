@@ -7,9 +7,9 @@ export default function Nav() {
   const navigate = useNavigate()
 
   // TO DO: change links in nav to go to specific pages
-  // To DO: add pages to index.tsx
+  // To DO: add links to index.tsx
   return (
-    <div className="bg-[#95B93C] w-full flex flex-initial space-x-10 rounded-t-lg p-2 text-white antialiased font-semibold">
+    <div className="bg-[#95B93C] w-full flex flex-initial space-x-10 rounded-t-lg p-2 text-white">
       <IoChatbubbleOutline size={30} onClick={() => navigate('/')} />
       <IoCallOutline size={30} onClick={() => navigate('/')} />
       <BsPerson size={30} onClick={() => navigate('/')} />

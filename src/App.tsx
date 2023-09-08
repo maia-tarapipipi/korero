@@ -12,17 +12,15 @@ function App() {
   // TO DO: once database is created with users I need to pull  the user information from the DB
   // isAuthenticated && db.user
   return (
-    <div className="h-screen w-full">
+    <div>
       {isAuthenticated ? (
-        <div>
+        <div className="h-screen w-full">
           <Header />
-          <div className="flex flex-row">
+          <div className="h-full flex flex-row p-3">
             <UserWindow />
             <ChatWindow />
           </div>
-          <div className="flex-1 w-full mt-5">
-            <Nav />
-          </div>
+          <Nav />
         </div>
       ) : (
         <div className="h-screen w-full">

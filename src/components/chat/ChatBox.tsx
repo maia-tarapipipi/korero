@@ -18,7 +18,7 @@ export default function ChatBox({ socket }: Props) {
   }
 
   return (
-    <div className="border-[3px] border-[#80AB15] rounded-[30px]">
+    <div className="border-[3px] border-[#81ab15] rounded-full ">
       <form onSubmit={handleSubmit} className="flex flex-row ">
         <input
           placeholder="kōrero mai..."
@@ -30,7 +30,7 @@ export default function ChatBox({ socket }: Props) {
         />
         <button
           type="submit"
-          className="w-[20%] border-l-[3px] flex justify-center items-center rounded-r-[30px] border-[#80AB15] bg-[#95B93C]"
+          className="w-[20%] border-l-[3px] flex justify-center items-center rounded-r-full border-[#80AB15]  bg-[#95b93c]"
         >
           <IoSend size={20} color={'white'} />
         </button>
