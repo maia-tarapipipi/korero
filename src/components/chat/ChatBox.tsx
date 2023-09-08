@@ -21,7 +21,7 @@ export default function ChatBox({ socket }: Props) {
     <div className="border-[3px] border-[#80AB15] rounded-[30px]">
       <form onSubmit={handleSubmit} className="flex flex-row ">
         <input
-          placeholder="type your messages here..."
+          placeholder="kōrero mai..."
           className="w-[80%] m-5"
           value={message}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>

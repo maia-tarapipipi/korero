@@ -27,7 +27,7 @@ Learnings and Research
     - 
  - How do namespaces work and what are they? 
  - How does Deployment work using something like AWS and docker?
-
+ - Do I want lazy loading? what is the point of lazy loading?
 
  listeners: 
  - Client: 'connect'
@@ -58,6 +58,10 @@ postgres
 - Cloud services -> AWS, Azure, Google
 - package code as a docker image -> deploy to ECR -> you fire up EC2 instance -> use image from docker
 - container -> giving the computer instructions on how to build and run (like buying the ingredients and then giving it to the chef)
+
+
+Database Research:
+
 
 Documentation: 
 - https://socket.io/docs/v4/

@@ -3,22 +3,22 @@ import { Server as ServerIo } from 'socket.io'
 import { createServer } from 'http'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import cors from 'cors'
+// import cors from 'cors'
 
-//express server//
+// ----------- express server -----------
 const app = express()
 
-app.use(cors())
+// ----------- cors handling -----------
+// app.use(cors())
 
-// combined server and socket connection
-
+// -----------  combined server and socket connection -----------
 const httpServer = createServer(app)
 
-// socket io server
+// -----------  socket io server -----------
 const io = new ServerIo(httpServer, {
-  cors: {
-    origin: 'http://localhost:5173',
-  },
+  // cors: {
+  //   origin: 'http://localhost:5174',
+  // },
 })
 
 // ----------- server side routes -----------
@@ -31,17 +31,16 @@ app.get('/', (_, res) => {
   res.sendFile(__dirname + 'index.html')
 })
 
-// socket io connection
+// -----------  socket io connection -----------
 io.on('connection', (socket) => {
   console.log('user connected')
   socket.on('disconnect', () => {
     console.log('user disconnected')
   })
   socket.on('chat message', (msg) => {
-    console.log('message recieved server:', msg)
-    io.emit('chat message', msg)
+    io.emit('new message', msg)
   })
 })
 
-// export out the combined server
+// -----------  export out the combined server -----------
 export default httpServer
