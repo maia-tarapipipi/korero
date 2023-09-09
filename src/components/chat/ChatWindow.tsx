@@ -15,7 +15,7 @@ export default function ChatWindow() {
   socket.on('new message', (msg) => newMessage(msg))
 
   return (
-    <div className=" w-2/3 flex flex-col sm:px-10 max-sm:px-5">
+    <div className=" w-2/3 flex flex-col sm:px-10 max-sm:px-5 justify-between">
       <Messages messages={messages} />
       <ChatBox socket={socket} />
     </div>

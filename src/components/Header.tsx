@@ -6,8 +6,8 @@ export default function Header() {
 
   return (
     <div
-      className="bg-[#95B93C] w-full rounded-b-lg p-2 text-white antialiased font-semibold text-left"
-      onClick={() => navigate('/')}
+      className="bg-[#95B93C] w-full h-[7%] rounded-b-lg p-2 text-white antialiased font-semibold text-left"
+      onClick={() => navigate('/hi')}
       aria-label="home"
     >
       Kōrero

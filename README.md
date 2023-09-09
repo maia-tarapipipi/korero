@@ -72,3 +72,5 @@ Documentation:
 - https://socket.io/get-started/chat
 - https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 - ![Client and server set up](image.png)
+- https://react-icons.github.io/react-icons/search?q=person
+- 

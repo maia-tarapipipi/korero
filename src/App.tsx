@@ -16,7 +16,8 @@ function App() {
       {isAuthenticated ? (
         <div className="h-screen w-full">
           <Header />
-          <div className="h-full flex flex-row p-3">
+          {/* TO DO: need variable styling on this for the userwindow to be the only thing visible */}
+          <div className="flex flex-row p-3 h-[86%] ">
             <UserWindow />
             <ChatWindow />
           </div>
