@@ -6,6 +6,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 import ChatWindow from './components/chat/ChatWindow'
 import Nav from './components/Nav'
 import UserWindow from './components/user/UserWindow'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   const { isAuthenticated } = useAuth0()
@@ -16,11 +17,7 @@ function App() {
       {isAuthenticated ? (
         <div className="h-screen w-full">
           <Header />
-          {/* TO DO: need variable styling on this for the userwindow to be the only thing visible */}
-          <div className="flex flex-row p-3 h-[86%] ">
-            <UserWindow />
-            <ChatWindow />
-          </div>
+          <Outlet />
           <Nav />
         </div>
       ) : (

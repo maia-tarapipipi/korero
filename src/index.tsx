@@ -13,16 +13,18 @@ import {
 } from 'react-router-dom'
 import { Auth0Provider } from '@auth0/auth0-react'
 
-const ChatPage = lazy(() => import('./components/chat/ChatWindow'))
+const Home = lazy(() => import('../src/components/Home'))
+const Chat = lazy(() => import('./components/chat/ChatWindow'))
 const ErrorPage = lazy(() => import('./utilities/Error'))
 const Profile = lazy(() => import('./components/profile/Profile'))
 export const routes = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
+    <Route index element={<Home />} />
     <Route
-      path="/"
+      path="/chat"
       element={
         <Suspense fallback={<Loading />}>
-          <ProtectedComponent component={ChatPage} />
+          <ProtectedComponent component={Chat} />
         </Suspense>
       }
     />

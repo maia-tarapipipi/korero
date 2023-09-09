@@ -23,23 +23,27 @@ function ProfileForm(props: Props) {
     props.handleSubmit(form)
   }
 
+  //TO DO: DB call - request drop down information for Iwi names including Tauiwi and Tangata Tiriti
+
   return (
-    <div>
+    <div className="flex justify-center text-center">
       <form onSubmit={handleSubmit}>
-        <h1>{props.profile ? 'Your Profile' : 'Introduce Yourself'}</h1>
+        <h1 className="text-center">
+          {props.profile ? 'Your Profile' : 'Introduce yourself'}
+        </h1>
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">name</label>
           <input
             type="text"
             name="name"
             id="name"
-            placeholder="Name"
+            placeholder="name"
             required
             defaultValue={props.profile?.name}
           />
         </div>
         <div>
-          <label htmlFor="username">Username</label>
+          <label htmlFor="username">username</label>
           <input
             type="text"
             name="username"
@@ -50,7 +54,7 @@ function ProfileForm(props: Props) {
           />
         </div>
         <div>
-          <label htmlFor="level">Proficiency Level</label>
+          <label htmlFor="level">proficiency level</label>
           <input
             type="text"
             name="level"
@@ -61,7 +65,20 @@ function ProfileForm(props: Props) {
           />
         </div>
         <div>
-          <button>Submit</button>
+          <label htmlFor="level">Iwi</label>
+          <input
+            type="text"
+            name="level"
+            id="level"
+            placeholder="level"
+            required
+            defaultValue={props.profile?.level}
+          />
+        </div>
+        <div>
+          <button className="bg-[#95B93C] text-white p-2 w-48 rounded-lg">
+            submit
+          </button>
         </div>
       </form>
     </div>

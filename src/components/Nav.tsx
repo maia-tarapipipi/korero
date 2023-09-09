@@ -15,7 +15,7 @@ export default function Nav() {
       <div className="flex flex-row space-x-10">
         <IoChatbubbleOutline size={30} onClick={() => navigate('/')} />
         <IoCallOutline size={30} onClick={() => navigate('/')} />
-        <BsPerson size={30} onClick={() => navigate('/')} />
+        <BsPerson size={30} onClick={() => navigate('/profile')} />
       </div>
       <div>
         <AiOutlineLogout

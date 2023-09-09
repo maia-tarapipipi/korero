@@ -38,7 +38,7 @@ function UserProfilePage() {
   }
 
   return (
-    <div>
+    <div className="h-[86%]">
       <ProfileForm handleSubmit={handleSubmit} profile={userQuery.data} />
     </div>
   )
