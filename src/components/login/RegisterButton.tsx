@@ -11,7 +11,7 @@ export default function RegisterButton() {
           loginWithRedirect({
             authorizationParams: {
               screen_hint: 'signup',
-              redirect_uri: `${window.location.origin}/`,
+              redirect_uri: `${window.location.origin}/profile`,
             },
           })
         }}

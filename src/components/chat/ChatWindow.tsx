@@ -10,14 +10,18 @@ export default function ChatWindow() {
     setMessages([str, ...messages])
   }
 
-  socket.on('connect', () => newMessage(`Welcome ${socket.id}`))
   socket.on('disconnect', () => newMessage('session over'))
   socket.on('new message', (msg) => newMessage(msg))
 
   return (
     <div className=" w-2/3 flex flex-col sm:px-10 max-sm:px-5 justify-between">
-      <Messages messages={messages} />
-      <ChatBox socket={socket} />
+      <div className="bg-[#B7DB5B] w-full rounded-bl-lg p-3 text-white font-semibold">
+        User: {socket.id}
+      </div>
+      <div>
+        <Messages messages={messages} />
+        <ChatBox socket={socket} />
+      </div>
     </div>
   )
 }
