@@ -26,13 +26,15 @@ function ProfileForm(props: Props) {
   //TO DO: DB call - request drop down information for Iwi names including Tauiwi and Tangata Tiriti
 
   return (
-    <div className="flex justify-center text-center">
+    <div className="h-full flex flex-col justify-center items-center text-[#607923] p-y-2">
       <form onSubmit={handleSubmit}>
-        <h1 className="text-center">
+        <h1 className="text-center text-lg">
           {props.profile ? 'Your Profile' : 'Introduce yourself'}
         </h1>
         <div>
-          <label htmlFor="name">name</label>
+          <label htmlFor="name" className="mr-4">
+            name
+          </label>
           <input
             type="text"
             name="name"
@@ -43,7 +45,9 @@ function ProfileForm(props: Props) {
           />
         </div>
         <div>
-          <label htmlFor="username">username</label>
+          <label htmlFor="username" className="mr-4">
+            username
+          </label>
           <input
             type="text"
             name="username"
@@ -54,7 +58,9 @@ function ProfileForm(props: Props) {
           />
         </div>
         <div>
-          <label htmlFor="level">proficiency level</label>
+          <label htmlFor="level" className="mr-4">
+            proficiency level
+          </label>
           <input
             type="text"
             name="level"
@@ -65,7 +71,9 @@ function ProfileForm(props: Props) {
           />
         </div>
         <div>
-          <label htmlFor="level">Iwi</label>
+          <label htmlFor="level" className="mr-4">
+            Iwi
+          </label>
           <input
             type="text"
             name="level"
@@ -75,8 +83,9 @@ function ProfileForm(props: Props) {
             defaultValue={props.profile?.level}
           />
         </div>
+        {/* add photo */}
         <div>
-          <button className="bg-[#95B93C] text-white p-2 w-48 rounded-lg">
+          <button className="bg-[#95B93C] text-white p-2 w-48 rounded-lg translate-x-1/4">
             submit
           </button>
         </div>

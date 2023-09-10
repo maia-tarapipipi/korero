@@ -14,14 +14,14 @@ export default function ChatWindow() {
   socket.on('new message', (msg) => newMessage(msg))
 
   return (
-    <div className=" w-2/3 flex flex-col sm:px-10 max-sm:px-5 justify-between">
-      <div className="bg-gradient-to-r from-[#B7DB5B] to-transparent w-full rounded-bl-lg p-3 text-white font-semibold ">
+    <div className="w-2/3 flex flex-col sm:px-10 max-sm:px-5">
+      <div className="bg-gradient-to-r from-[#B7DB5B] to-transparent w-full rounded-bl-lg p-3 text-white font-semibold h-[5%]">
         User: {socket.id}
       </div>
-      <div>
-        <Messages messages={messages} />
-        <ChatBox socket={socket} />
-      </div>
+
+      <Messages messages={messages} />
+
+      <ChatBox socket={socket} />
     </div>
   )
 }

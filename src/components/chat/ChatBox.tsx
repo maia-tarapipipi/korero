@@ -18,8 +18,8 @@ export default function ChatBox({ socket }: Props) {
   }
 
   return (
-    <div className="border-[3px] border-[#81ab15] rounded-full ">
-      <form onSubmit={handleSubmit} className="flex flex-row ">
+    <div className="border-[3px] border-[#81ab15] rounded-full">
+      <form onSubmit={handleSubmit} className="flex flex-row">
         <input
           placeholder="kōrero mai..."
           className="w-[80%] m-5"

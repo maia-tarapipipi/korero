@@ -3,9 +3,7 @@ import Header from './components/Header'
 import LoginButton from './components/login/LoginButton'
 import RegisterButton from './components/login/RegisterButton'
 import { useAuth0 } from '@auth0/auth0-react'
-import ChatWindow from './components/chat/ChatWindow'
 import Nav from './components/Nav'
-import UserWindow from './components/user/UserWindow'
 import { Outlet } from 'react-router-dom'
 
 function App() {
@@ -23,7 +21,7 @@ function App() {
       ) : (
         <div className="h-screen w-full">
           <Header />
-          <div className="flex flex-col items-center justify-center h-full space-y-5 ">
+          <div className="flex flex-col items-center justify-center h-full space-y-5">
             <LoginButton />
             <RegisterButton />
           </div>
