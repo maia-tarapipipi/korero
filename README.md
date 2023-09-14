@@ -64,6 +64,14 @@ Consistent naming conventions:
 - folder names: snakeCase
 - component names: first letter capitalized
 
+Database research: 
+- relational database - postgres, mysql, sqlite3 (any database with a table )
+- You can build raw quieries on top of this but its better practice to use an ORM or 
+SQL query builders 
+- ORM: PG and Postgres JS, sequalize(highlevel abstraction, not typeesafe out of the box, ), typeORM (relies on type decorators, need to upate), PRISMA (custom schema, cli can deal with abstractions, type safe,  3rd party abstractions ), DRIZZLE orm(type safe, infer types)
+- SQL query builder: Knex, kysley(better type safety than knex)
+- 
+
 
 Documentation: 
 - https://socket.io/docs/v4/

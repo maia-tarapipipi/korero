@@ -15,7 +15,7 @@ export default function ChatWindow() {
 
   return (
     <div className="w-2/3 flex flex-col sm:px-10 max-sm:px-5">
-      <div className="bg-gradient-to-r from-[#B7DB5B] to-transparent w-full rounded-bl-lg p-3 text-white font-semibold h-[5%]">
+      <div className=" bg-gradient-to-r from-[#B7DB5B] to-transparent w-full rounded-bl-lg p-3 text-white font-semibold h-[7%]">
         User: {socket.id}
       </div>
 
